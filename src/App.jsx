@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from "./components/layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import MyEbayLayout from "./components/layouts/MyEbayLayout";
+import RecentlyViewedPage from "./pages/RecentlyViewed";
+import WatchListPage from "./pages/WatchList";
 
 const router = createBrowserRouter([
     {
@@ -17,7 +19,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/route2", element: <MyEbayLayout />, children: [
-                    { path: "/route2/3", element: <HomePage /> },
+                    { path: "/route2/recently-viewed", element: <RecentlyViewedPage /> },
+                    { path: "/route2/watchlist", element: <WatchListPage /> },
                 ]
             },
         ],

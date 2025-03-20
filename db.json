@@ -208,5 +208,204 @@
             "price": 399,
             "created_at": "2025-03-12T20:15:00Z"
         }
-    ]
+    ],
+    "recentlyViewed": [
+        {
+            "id": 1,
+            "title": "Apple MacBook Pro 14-inch",
+            "description": "MacBook Pro with M3 chip, 16GB RAM, 512GB SSD.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 1999,
+            "created_at": "2025-03-19T08:30:00Z"
+        },
+        {
+            "id": 2,
+            "title": "Samsung Galaxy S24 Ultra",
+            "description": "128GB, Phantom Black, unlocked.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 1299,
+            "created_at": "2025-03-18T10:45:00Z"
+        },
+        {
+            "id": 3,
+            "title": "Sony WH-1000XM5 Headphones",
+            "description": "Noise Cancelling Wireless Headphones.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 1299,
+            "created_at": "2025-03-17T09:15:00Z"
+        },
+        {
+            "id": 4,
+            "title": "Dell XPS 15 Laptop",
+            "description": "Intel Core i9, 32GB RAM, 1TB SSD.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 2499,
+            "created_at": "2025-03-16T11:20:00Z"
+        },
+        {
+            "id": 5,
+            "title": "Nintendo Switch OLED",
+            "description": "Latest OLED model with enhanced screen.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 349,
+            "created_at": "2025-03-15T14:00:00Z"
+        },
+        {
+            "id": 6,
+            "title": "Apple iPhone 15 Pro Max",
+            "description": "256GB, Titanium Gray.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 1299,
+            "created_at": "2025-03-14T16:50:00Z"
+        },
+        {
+            "id": 7,
+            "title": "PlayStation 5",
+            "description": "Sony PS5 with DualSense controller.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 499,
+            "created_at": "2025-03-13T18:30:00Z"
+        },
+        {
+            "id": 8,
+            "title": "GoPro HERO12 Black",
+            "description": "Waterproof 5K Action Camera.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 399,
+            "created_at": "2025-03-12T20:15:00Z"
+        }
+    ],
+    "watchList": [
+        {
+            "id": 1,
+            "title": "Apple MacBook Pro 14-inch",
+            "description": "MacBook Pro with M3 chip, 16GB RAM, 512GB SSD.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 1999,
+            "created_at": "2025-03-19T08:30:00Z"
+        },
+        {
+            "id": 2,
+            "title": "Samsung Galaxy S24 Ultra",
+            "description": "128GB, Phantom Black, unlocked.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 1299,
+            "created_at": "2025-03-18T10:45:00Z"
+        },
+        {
+            "id": 3,
+            "title": "Sony WH-1000XM5 Headphones",
+            "description": "Noise Cancelling Wireless Headphones.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 1299,
+            "created_at": "2025-03-17T09:15:00Z"
+        },
+        {
+            "id": 4,
+            "title": "Dell XPS 15 Laptop",
+            "description": "Intel Core i9, 32GB RAM, 1TB SSD.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 2499,
+            "created_at": "2025-03-16T11:20:00Z"
+        },
+        {
+            "id": 5,
+            "title": "Nintendo Switch OLED",
+            "description": "Latest OLED model with enhanced screen.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 349,
+            "created_at": "2025-03-15T14:00:00Z"
+        },
+        {
+            "id": 6,
+            "title": "Apple iPhone 15 Pro Max",
+            "description": "256GB, Titanium Gray.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 1299,
+            "created_at": "2025-03-14T16:50:00Z"
+        },
+        {
+            "id": 7,
+            "title": "PlayStation 5",
+            "description": "Sony PS5 with DualSense controller.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 499,
+            "created_at": "2025-03-13T18:30:00Z"
+        },
+        {
+            "id": 8,
+            "title": "GoPro HERO12 Black",
+            "description": "Waterproof 5K Action Camera.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 399,
+            "created_at": "2025-03-12T20:15:00Z"
+        }
+    ],
+    "cartItems": [
+        {
+            "id": 1,
+            "title": "Apple MacBook Pro 14-inch",
+            "description": "MacBook Pro with M3 chip, 16GB RAM, 512GB SSD.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 1999,
+            "created_at": "2025-03-19T08:30:00Z"
+        },
+        {
+            "id": 2,
+            "title": "Samsung Galaxy S24 Ultra",
+            "description": "128GB, Phantom Black, unlocked.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 1299,
+            "created_at": "2025-03-18T10:45:00Z"
+        },
+        {
+            "id": 3,
+            "title": "Sony WH-1000XM5 Headphones",
+            "description": "Noise Cancelling Wireless Headphones.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 1299,
+            "created_at": "2025-03-17T09:15:00Z"
+        },
+        {
+            "id": 4,
+            "title": "Dell XPS 15 Laptop",
+            "description": "Intel Core i9, 32GB RAM, 1TB SSD.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 2499,
+            "created_at": "2025-03-16T11:20:00Z"
+        },
+        {
+            "id": 5,
+            "title": "Nintendo Switch OLED",
+            "description": "Latest OLED model with enhanced screen.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 349,
+            "created_at": "2025-03-15T14:00:00Z"
+        },
+        {
+            "id": 6,
+            "title": "Apple iPhone 15 Pro Max",
+            "description": "256GB, Titanium Gray.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 1299,
+            "created_at": "2025-03-14T16:50:00Z"
+        },
+        {
+            "id": 7,
+            "title": "PlayStation 5",
+            "description": "Sony PS5 with DualSense controller.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 499,
+            "created_at": "2025-03-13T18:30:00Z"
+        },
+        {
+            "id": 8,
+            "title": "GoPro HERO12 Black",
+            "description": "Waterproof 5K Action Camera.",
+            "url": "https://random.imagecdn.app/500/150",
+            "price": 399,
+            "created_at": "2025-03-12T20:15:00Z"
+        }
+    ],
+    
 }
