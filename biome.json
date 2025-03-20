@@ -8,7 +8,12 @@
     },
     "files": {
         "ignoreUnknown": false,
-        "ignore": ["node_modules", "dist", "build", ".vscode"]
+        "ignore": [
+            "node_modules",
+            "dist",
+            "build",
+            ".vscode"
+        ]
     },
     "formatter": {
         "enabled": true,
@@ -24,7 +29,13 @@
     "linter": {
         "enabled": true,
         "rules": {
-            "recommended": true
+            "recommended": true,
+            "complexity": {
+                "useOptionalChain": "off"
+            },
+            "a11y": {
+                "useKeyWithClickEvents": "off"
+            }
         }
     },
     "javascript": {

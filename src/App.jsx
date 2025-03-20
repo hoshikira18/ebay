@@ -1,5 +1,7 @@
+import MainLayout from "./components/layouts/MainLayout";
+
 function App() {
-    return <div>Hello, ViteJS</div>;
+    return <MainLayout>Hello, ViteJS</MainLayout>;
 }
 
 export default App;
