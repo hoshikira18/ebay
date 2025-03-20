@@ -18,7 +18,7 @@ export default function MainLayout() {
 
     return (
         <>
-            <div id="MainLayout" className='min-w-[1050px] max-w-[1300px] mx-auto'>
+            <div className='min-w-[1050px] max-w-[1300px] mx-auto'>
                 <div>
                     {isLoading ? <Loading /> : <></>}
                     <TopMenu />
