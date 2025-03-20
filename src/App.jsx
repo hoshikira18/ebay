@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import MyEbayLayout from "./components/layouts/MyEbayLayout";
 import RecentlyViewedPage from "./pages/RecentlyViewed";
 import WatchListPage from "./pages/WatchList";
+import CheckOutPage from "./pages/CheckOutPage";
 
 const router = createBrowserRouter([
     {
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
         element: <MainLayout />,
         children: [
             { index: true, element: <HomePage /> },
+            {
+                path: "/checkout",
+                element: <CheckOutPage />
+            }
         ],
     },
     {
@@ -25,6 +30,7 @@ const router = createBrowserRouter([
             },
         ],
     },
+    
 ]);
 
 function App() {
