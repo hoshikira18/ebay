@@ -19,3 +19,28 @@ export const getAllProduct = async () => {
     return [];
   }
 };
+
+export const getAddProductToWatchList = async (product) => {
+  try {
+    const { data } = await instance.get(`/watchList`);
+
+    const isProductInWatchList = data.some((item) => item.id === product.id);
+
+    if (isProductInWatchList) {
+      return {
+        success: false,
+        message: "This product is already in your watchlist.",
+      };
+    }
+
+    await instance.post(`/watchList`, product);
+
+    return { success: true, message: "Product added to watchlist!" };
+  } catch (error) {
+    console.error("Error adding product to watchlist:", error);
+    return {
+      success: false,
+      message: "Something went wrong, please try again.",
+    };
+  }
+};

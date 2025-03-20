@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { getAllProduct } from "../api";
+import { getAllProduct, getAddProductToWatchList } from "../api"; // Import the new API function
+import { Link } from "react-router-dom"; // Import Link for navigation
 
 export default function HomePage() {
   const [products, setProducts] = useState([]);
   const [visibleProducts, setVisibleProducts] = useState(10); // Show 10 products initially
+  const [message, setMessage] = useState(""); // State to store the success or error message
 
   useEffect(() => {
     getAllProduct().then((data) => {
@@ -20,6 +22,17 @@ export default function HomePage() {
       setVisibleProducts(products.length); // Show all products (20 in this case)
     } else {
       setVisibleProducts(10); // Show only 10 products
+    }
+  };
+
+  // Function to handle adding product to watchlist
+  const handleAddToWatchList = async (product) => {
+    const response = await getAddProductToWatchList(product);
+
+    if (response.success) {
+      setMessage(response.message); // Show success message
+    } else {
+      setMessage(response.message); // Show error message
     }
   };
 
@@ -54,20 +67,34 @@ export default function HomePage() {
 
       <div className="text-2xl font-bold mt-4 mb-6 px-4">Products</div>
 
+      {/* Show the message */}
+      {message && <div className="text-center text-red-500">{message}</div>}
+
       <div className="grid grid-cols-5 gap-4">
         {products.slice(0, visibleProducts).map((product) => (
-          <div key={product.id} className="border p-4">
-            <img
-              src={product.images[0]}
-              alt={product.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="font-bold mt-2">{product.title}</div>
-            <div className="text-sm text-gray-600">{product.description}</div>
-            <div className="text-lg font-semibold mt-2">${product.price}</div>
-            <div className="text-sm text-gray-500 mt-1">
-              Created at: {new Date(product.created_at).toLocaleDateString()}
-            </div>
+          <div key={product.id} className="border p-4 flex flex-col">
+            {/* Link to product detail page */}
+            <Link to={`/product/${product.id}`} className="flex-1">
+              <img
+                src={product.images[0]}
+                alt={product.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="font-bold mt-2">{product.title}</div>
+              <div className="text-sm text-gray-600">{product.description}</div>
+              <div className="text-lg font-semibold mt-2">${product.price}</div>
+              <div className="text-sm text-gray-500 mt-1">
+                Created at: {new Date(product.created_at).toLocaleDateString()}
+              </div>
+            </Link>
+
+            {/* Add to Watchlist button */}
+            <button
+              onClick={() => handleAddToWatchList(product)}
+              className="mt-4 w-full py-2 px-4 text-white bg-blue-600 rounded hover:bg-blue-700"
+            >
+              Add to Watchlist
+            </button>
           </div>
         ))}
       </div>
