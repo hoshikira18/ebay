@@ -87,7 +87,7 @@ const CheckoutPage = () => {
             className="flex items-center py-4 border-b last:border-b-0"
           >
             <img
-              src={item.url}
+              src={item.images[0]}
               alt={item.title}
               className="object-cover w-24 h-24 mr-4 rounded-lg"
             />

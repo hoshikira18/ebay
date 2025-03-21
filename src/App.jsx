@@ -6,6 +6,7 @@ import RecentlyViewedPage from "./pages/RecentlyViewed";
 import WatchListPage from "./pages/WatchList";
 import CheckOutPage from "./pages/CheckOutPage";
 import ProductDetail from "./pages/ProductDetail";
+import Search from "./pages/Search";
 
 const router = createBrowserRouter([
     {
@@ -14,8 +15,12 @@ const router = createBrowserRouter([
         children: [
             { index: true, element: <HomePage /> },
             {
-                path: "/checkout",
+                path: "/cart",
                 element: <CheckOutPage />
+            },
+            {
+                path: "/search/:q",
+                element: <Search />
             },
             { path: "/products/:id", element: <ProductDetail /> }
         ],

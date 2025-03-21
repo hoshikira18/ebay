@@ -20,27 +20,27 @@ export const getAllProduct = async () => {
   }
 };
 
-export const getAddProductToWatchList = async (product) => {
-  try {
-    const { data } = await instance.get(`/watchList`);
+export const addProductToWatchList = async (product) => {
+  const { data } = await instance.get('/watchList');
 
-    const isProductInWatchList = data.some((item) => item.id === product.id);
+  const isProductInWatchList = data.some((item) => item.id === product.id);
 
-    if (isProductInWatchList) {
-      return {
-        success: false,
-        message: "This product is already in your watchlist.",
-      };
-    }
-
-    await instance.post(`/watchList`, product);
-
-    return { success: true, message: "Product added to watchlist!" };
-  } catch (error) {
-    console.error("Error adding product to watchlist:", error);
-    return {
-      success: false,
-      message: "Something went wrong, please try again.",
-    };
+  if (isProductInWatchList) {
+    throw new Error("Product existed in watch list!")
   }
+
+  await instance.post('/watchList', product);
 };
+
+export const addToCart = async (product) => {
+  const { data } = await instance.get('/cartItems');
+  const isExist = data?.some(d => d.id == product.id)
+  if (!isExist) {
+    await instance.post('/cartItems', {
+      ...product,
+      quantity: 1,
+    })
+  } else {
+    throw new Error("Product existed in cart!")
+  }
+}

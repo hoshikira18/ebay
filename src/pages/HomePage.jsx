@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { getAllProduct, getAddProductToWatchList } from "../api"; // Import the new API function
+import { getAllProduct, addProductToWatchList } from "../api"; // Import the new API function
 import { Link } from "react-router-dom"; // Import Link for navigation
 
 export default function HomePage() {
@@ -27,7 +27,7 @@ export default function HomePage() {
 
   // Function to handle adding product to watchlist
   const handleAddToWatchList = async (product) => {
-    const response = await getAddProductToWatchList(product);
+    const response = await addProductToWatchList(product);
 
     if (response.success) {
       setMessage(response.message); // Show success message
@@ -74,7 +74,7 @@ export default function HomePage() {
         {products.slice(0, visibleProducts).map((product) => (
           <div key={product.id} className="border p-4 flex flex-col">
             {/* Link to product detail page */}
-            <Link to={`/product/${product.id}`} className="flex-1">
+            <Link to={`/products/${product.id}`} className="flex-1">
               <img
                 src={product.images[0]}
                 alt={product.title}
@@ -90,6 +90,7 @@ export default function HomePage() {
 
             {/* Add to Watchlist button */}
             <button
+              type="button"
               onClick={() => handleAddToWatchList(product)}
               className="mt-4 w-full py-2 px-4 text-white bg-blue-600 rounded hover:bg-blue-700"
             >
@@ -112,6 +113,9 @@ export default function HomePage() {
               fill="currentColor"
               className="mr-1 h-4 w-4"
             >
+              <title>
+                expand icon
+              </title>
               <path
                 fillRule="evenodd"
                 d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"

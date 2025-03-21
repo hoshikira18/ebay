@@ -2,12 +2,14 @@
 import { useState } from "react";
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BiLoaderCircle } from 'react-icons/bi'
+import { useNavigate } from "react-router-dom";
 
 export default function MainHeader() {
 
     const [items, setItems] = useState([])
     const [isSearching, setIsSearching] = useState(null)
-
+    const [search, setSearch] = useState("")
+    const navigate = useNavigate()
 
     return (
         <>
@@ -36,7 +38,7 @@ export default function MainHeader() {
                                                     pl-3
                                                     focus:outline-none
                                                 "
-                                                // onChange={handleSearchName}
+                                                onChange={(e) => setSearch(e.target.value)}
                                                 placeholder="Search for anything"
                                                 type="text"
                                             />
@@ -63,7 +65,9 @@ export default function MainHeader() {
                                                 : null}
                                         </div>
 
-                                        <button type="button" className="flex items-center bg-blue-600 text-sm font-semibold text-white p-[11px] ml-2 px-14 rounded-3xl">
+                                        <button onClick={() => {
+                                            navigate(`/search/${search}`)
+                                        }} type="button" className="flex items-center bg-blue-600 text-sm font-semibold text-white p-[11px] ml-2 px-14 rounded-3xl">
                                             Search
                                         </button>
 

@@ -1,9 +1,11 @@
 import { useState } from "react";
 import ClientOnly from "../ClientOnly";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom";
 
 const TopMenu = () => {
     const [isMenu, setIsMenu] = useState(false)
+    const navigate = useNavigate()
     return (
         <>
             <div id="TopMenu" className="border-b">
@@ -61,14 +63,17 @@ ${isMenu ? 'visible' : 'hidden'}
                             <img width={32} src="https://cdn-icons-png.flaticon.com/512/555/555515.png" alt="pic" />
                             Ship to
                         </li>
+
+                        <li style={{
+                            margin: "0 20px"
+                        }}>
+                            <Link to={'/route2/recently-viewed'}>Recently Viewed</Link>
+                        </li>
+
                         <ClientOnly>
                             <li className="px-3 hover:underline cursor-pointer">
-                                <div className="relative">
+                                <div className="relative" onClick={() => navigate("/cart")}>
                                     <AiOutlineShoppingCart size={22} />
-                                    {/* {cart.cartCount() > 0 ? <div className="absolute text-[10px] -top-[2px] -right-[5px] bg-red-500 w-[14px] h-[14px] rounded-full text-white">
-                                        <div className=" flex items-center justify-center -mt-[1px]">{cart.cartCount()}</div>
-                                    </div>
-                                        : <></>} */}
                                 </div>
                             </li>
                         </ClientOnly>

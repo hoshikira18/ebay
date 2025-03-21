@@ -22,7 +22,7 @@ function WatchListPage() {
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-2xl font-bold">Watchlist</h2>
 
-       
+
         <div className="relative w-1/2">
           <input
             type="text"
@@ -32,14 +32,14 @@ function WatchListPage() {
             className="w-full p-2 border rounded-md shadow-sm focus:outline-none"
           />
         </div>
-        
+
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {filteredProducts.map((item) => (
           <div key={item.id} className="p-4 border rounded-lg shadow-md">
             <img
-              src={item.url}
+              src={item.images[0]}
               alt={item.title}
               className="object-cover w-full h-40 rounded-md"
             />

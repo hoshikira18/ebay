@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { getProductById } from "../api"
+import { addProductToWatchList, addToCart, getProductById } from "../api"
 import { BsShieldCheck } from "react-icons/bs"
+import { toast } from "react-toastify"
+import { Bounce } from "react-toastify"
 
 function ProductDetail() {
     const { id } = useParams()
@@ -17,6 +19,67 @@ function ProductDetail() {
         })
 
     }, [id])
+
+    const handleAddToCart = async () => {
+        try {
+
+            await addToCart(product).then(() => {
+                toast.success("Add to cart success!", {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                });
+            })
+        } catch (error) {
+            toast.error(error.message, {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Bounce,
+            });
+        }
+    }
+
+    const handleAddToWatchList = async () => {
+        try {
+            await addProductToWatchList(product).then(() => {
+                toast.success("Add to watchlist success!", {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                });
+            })
+        } catch (error) {
+            toast.error(error.message, {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Bounce,
+            });
+        }
+    }
 
     if (!product) return <div>Loading...</div>
 
@@ -54,10 +117,10 @@ function ProductDetail() {
                     <button type="button" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-3xl">
                         Buy It Now
                     </button>
-                    <button type="button" className="w-full border border-gray-400 text-gray-700 py-2 rounded-3xl">
+                    <button onClick={handleAddToCart} type="button" className="w-full border border-gray-400 text-gray-700 py-2 rounded-3xl">
                         Add to Cart
                     </button>
-                    <button type="button" className="w-full border border-gray-400 text-gray-700 py-2 rounded-3xl">
+                    <button onClick={handleAddToWatchList} type="button" className="w-full border border-gray-400 text-gray-700 py-2 rounded-3xl">
                         <span>Add to Watchlist</span>
                     </button>
                 </div>
