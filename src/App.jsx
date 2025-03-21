@@ -5,6 +5,7 @@ import MyEbayLayout from "./components/layouts/MyEbayLayout";
 import RecentlyViewedPage from "./pages/RecentlyViewed";
 import WatchListPage from "./pages/WatchList";
 import CheckOutPage from "./pages/CheckOutPage";
+import ProductDetail from "./pages/ProductDetail";
 
 const router = createBrowserRouter([
     {
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
             {
                 path: "/checkout",
                 element: <CheckOutPage />
-            }
+            },
+            { path: "/products/:id", element: <ProductDetail /> }
         ],
     },
     {
@@ -30,7 +32,7 @@ const router = createBrowserRouter([
             },
         ],
     },
-    
+
 ]);
 
 function App() {
