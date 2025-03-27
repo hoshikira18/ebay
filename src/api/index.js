@@ -34,7 +34,7 @@ export const addProductToWatchList = async (product) => {
 
 export const addToCart = async (product) => {
   const { data } = await instance.get('/cartItems');
-  const isExist = data?.some(d => d.id == product.id)
+  const isExist = data?.some(d => d.id === product.id)
   if (!isExist) {
     await instance.post('/cartItems', {
       ...product,

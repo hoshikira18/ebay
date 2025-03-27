@@ -2,10 +2,26 @@ import { useState } from "react";
 import ClientOnly from "../ClientOnly";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const TopMenu = () => {
-    const [isMenu, setIsMenu] = useState(false)
+    const [isMenu] = useState(false)
     const navigate = useNavigate()
+    const [user, setUser] = useState(null)
+
+    useEffect(() => {
+        const savedUser = localStorage.getItem("role");
+        try {
+            if (savedUser) {
+                setUser(JSON.parse(savedUser));
+            }
+        } catch (error) {
+            console.error("Error parsing saved user role:", error);
+        }
+    }, []);
+
+    console.log(user)
+
     return (
         <>
             <div id="TopMenu" className="border-b">
@@ -14,6 +30,17 @@ const TopMenu = () => {
                         id="TopMenuLeft"
                         className="flex items-center text-[11px] text-[#333333] px-2 h-8"
                     >
+                        <li>
+                            {
+                                user ? (
+                                    <p>Hi! Khuyen</p>
+                                ) : (
+                                    <p>
+                                        <Link to={"/login"}>Sign in</Link>
+                                    </p>
+                                )
+                            }
+                        </li>
                         <li className="relative px-3">
                             <div
                                 id="AuthDropdown"
@@ -24,8 +51,8 @@ ${isMenu ? 'visible' : 'hidden'}
                             >
                                 <div>
                                     <div className="flex items-center justify-start gap-1 p-3">
-                                        <img width={50} src={"pic"} alt="pic" />
-                                        <div className="font-bold text-[13px]">Khuyen</div>
+                                        <img width={50} className="aspect-square rounded-full" src={"https://mhretxajomgevorqnwoy.supabase.co/storage/v1/object/public/images/images/img_1742657396157-3e4f234451b78b9c1cd40bc945f24b8f.jpg"} alt="pic" />
+                                        <div className="font-bold text-[13px]">{user?.username}</div>
                                     </div>
                                 </div>
 
